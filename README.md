@@ -11,73 +11,39 @@ The system connects raw corporate footprints (emails, CRM history, calendar meet
 ### 1. Editorial Landing Page
 *A technology-meets-architecture overview featuring the linear sequence pipeline grid and interactive elements.*
 <!-- PLACEHOLDER: Replace the path below with your landing page screenshot -->
-![Landing Page Frame](/frontend/public/screenshots/landing.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 ### 2. AI Command Center
 *The primary workspace where recruiters select candidates, initiate the live ReAct reasoning stream, and approve/reject generated pitches.*
 <!-- PLACEHOLDER: Replace the path below with your command center workspace screenshot -->
-![AI Command Center](/frontend/public/screenshots/command_center.png)
+![alt text](image-3.png)
 
 ### 3. Interactive AI Planner
 *A live visual node graph built using React Flow, mapping out real-time planner steps, tools, and execution outputs.*
 <!-- PLACEHOLDER: Replace the path below with your AI planner graph screenshot -->
-![AI Planner Graph](/frontend/public/screenshots/planner.png)
+![alt text](image-4.png)
 
 ### 4. Decision Queue
 *A ranked, high-priority feed displaying approved placements waiting for pipeline writebacks.*
 <!-- PLACEHOLDER: Replace the path below with your decision queue screenshot -->
-![Decision Queue](/frontend/public/screenshots/decision_queue.png)
+![alt text](image-5.png)
 
 ### 5. Client & Candidate Intelligence
 *Detailed records showcasing parsed resume parameters, client accounts, open roles, and history.*
 <!-- PLACEHOLDER: Replace the path below with your intelligence directory screenshot -->
-![Intelligence Directory](/frontend/public/screenshots/intelligence.png)
+![alt text](<Screenshot 2026-06-27 175301.png>)
 
 ### 6. Platform Settings & Health Dashboard
 *Control panel for managing compliance thresholds, API parameters, and tracking latency or uptime.*
 <!-- PLACEHOLDER: Replace the path below with your settings screenshot -->
-![Platform Settings & Health](/frontend/public/screenshots/settings.png)
+![alt text](image-6.png)
 
 ---
 
 ## 🏛️ System Architecture
 
-```
-                  ┌──────────────────────────────────────────────┐
-                  │           Next.js 15 Web App Client          │
-                  │             (React, Tailwind CSS)            │
-                  └───────────────┬──────────────▲───────────────┘
-                                  │              │
-                                  │ REST API     │ Server-Sent Logs
-                                  ▼              │
-                  ┌──────────────────────────────┴───────────────┐
-                  │                 FastAPI Gateway              │
-                  │             (Python / Uvicorn Server)        │
-                  └───────────────┬──────────────▲───────────────┘
-                                  │              │
-                                  │ Pauses/      │ Stores State &
-                                  │ Resumes      │ Executed Logs
-                                  ▼              │
-    ┌────────────────────────────────────────────┴───────────────┐
-    │                LangGraph Autonomous Orchestration          │
-    │         (ReAct loop with Groq LLM & MemorySaver Gate)       │
-    └─────────────────────────────┬──────────────────────────────┘
-                                  │
-                                  │ stdio Transport
-                                  ▼
-    ┌────────────────────────────────────────────────────────────┐
-    │                 Model Context Protocol (MCP) Server        │
-    │         (stdio host containing data access tools)          │
-    └─────────────────────────────┬──────────────────────────────┘
-                                  │
-                    ┌─────────────┴─────────────┐
-                    ▼                           ▼
-            ┌───────────────┐           ┌───────────────┐
-            │   Supabase    │           │  Redis Cache  │
-            │ (PostgreSQL)  │           │   (HITL DB)   │
-            └───────────────┘           └───────────────┘
-```
-
+![alt text](image.png)
 ---
 
 ## 🧠 Autonomous Agent Nodes & Policies
